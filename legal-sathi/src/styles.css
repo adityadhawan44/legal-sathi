@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: 'Manrope', sans-serif;
+  --bg: #f4f7fb;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-strong: #ffffff;
+  --ink: #122033;
+  --muted: #5b6b80;
+  --line: rgba(18, 32, 51, 0.1);
+  --blue: #1a4db3;
+  --blue-deep: #0f2f72;
+  --saffron: #ff8c00;
+  --teal: #0f8f85;
+  --danger: #cc4a2f;
+  --shadow: 0 24px 60px rgba(18, 32, 51, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 140, 0, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(26, 77, 179, 0.18), transparent 30%),
+    linear-gradient(180deg, #f9fbff 0%, var(--bg) 55%, #eef3fa 100%);
+  color: var(--ink);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.ambient {
+  position: fixed;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 999px;
+  filter: blur(40px);
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.ambient-left {
+  left: -8rem;
+  top: 10rem;
+  background: rgba(255, 140, 0, 0.35);
+}
+
+.ambient-right {
+  right: -8rem;
+  top: 4rem;
+  background: rgba(26, 77, 179, 0.3);
+}
+
+.topbar,
+.layout,
+.mobile-tabs {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.topbar h1,
+.hero h2,
+.section-head h3 {
+  font-family: 'DM Serif Display', serif;
+  margin: 0;
+  line-height: 1;
+}
+
+.topbar h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.topbar-actions,
+.hero-cta,
+.feed-actions,
+.filters,
+.card-actions,
+.lawyer-meta,
+.suggestion-row,
+.hero-stat-grid,
+.mini-grid,
+.three-grid {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge,
+.tag,
+.verified,
+.primary-chip,
+.suggestion-chip {
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.badge {
+  background: rgba(15, 47, 114, 0.08);
+  color: var(--blue-deep);
+}
+
+.primary-chip,
+.primary-button {
+  border: 0;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-deep) 100%);
+  color: white;
+  box-shadow: 0 16px 32px rgba(26, 77, 179, 0.2);
+  cursor: pointer;
+}
+
+.primary-chip {
+  padding-inline: 1rem;
+}
+
+.primary-button,
+.ghost-button {
+  min-height: 3rem;
+  border-radius: 1rem;
+  padding: 0.85rem 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ghost-button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.ghost-button.small {
+  min-height: auto;
+  padding: 0.7rem 1rem;
+}
+
+.layout {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 7rem;
+}
+
+.hero,
+.panel,
+.feed-card,
+.lawyer-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 1.25rem;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.hero h2 {
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  max-width: 10ch;
+}
+
+.hero-text,
+.lead,
+.feed-card p,
+.lawyer-card p,
+.profile-card p,
+.empty-state p,
+.law-card p,
+.draft-preview,
+.field span,
+li,
+.hero-stat-card p {
+  color: var(--muted);
+}
+
+.hero-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-stat-card,
+.hero-stat-grid article,
+.profile-card,
+.mini-grid article {
+  background: var(--card-strong);
+  border-radius: 1.5rem;
+  padding: 1.1rem;
+  border: 1px solid var(--line);
+}
+
+.hero-stat-card strong,
+.hero-stat-grid strong,
+.mini-grid strong {
+  display: block;
+  font-size: 1.6rem;
+  margin-top: 0.35rem;
+  color: var(--blue-deep);
+}
+
+.mobile-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0 0.25rem;
+}
+
+.nav-item {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, rgba(26, 77, 179, 0.14), rgba(255, 140, 0, 0.15));
+  color: var(--blue-deep);
+  border-color: rgba(26, 77, 179, 0.2);
+}
+
+.tab-content {
+  margin-top: 1rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-head.compact {
+  margin-bottom: 1.25rem;
+}
+
+.panel,
+.feed-card,
+.lawyer-card {
+  border-radius: 1.75rem;
+  padding: 1.2rem;
+}
+
+.feed-grid,
+.lawyer-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.feed-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lawyer-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feed-tag-row,
+.lawyer-head,
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.tag {
+  background: rgba(255, 140, 0, 0.12);
+  color: #9a5200;
+}
+
+.verified {
+  background: rgba(15, 143, 133, 0.12);
+  color: var(--teal);
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  min-height: 3rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(18, 32, 51, 0.14);
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+}
+
+.textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.textarea.short {
+  min-height: 6rem;
+}
+
+.checkbox {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.full {
+  width: 100%;
+}
+
+.result-panel {
+  min-height: 100%;
+}
+
+.result-block + .result-block {
+  margin-top: 1.25rem;
+}
+
+.result-block h4,
+.feed-card h4,
+.lawyer-card h4,
+.empty-state h4 {
+  margin: 0 0 0.75rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.law-card {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  background: rgba(26, 77, 179, 0.04);
+}
+
+.law-card + .law-card {
+  margin-top: 0.7rem;
+}
+
+.link-stack {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.link-stack a {
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  background: rgba(15, 47, 114, 0.05);
+}
+
+.disclaimer {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgba(204, 74, 47, 0.08);
+  color: var(--danger);
+}
+
+.draft-preview {
+  white-space: pre-wrap;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #fffdf8;
+  border: 1px solid rgba(255, 140, 0, 0.12);
+  max-height: 26rem;
+  overflow: auto;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  text-align: center;
+}
+
+.suggestion-chip {
+  border: 1px solid rgba(26, 77, 179, 0.14);
+  background: rgba(26, 77, 179, 0.06);
+  color: var(--blue-deep);
+  cursor: pointer;
+}
+
+.profile-card {
+  margin-top: 1rem;
+}
+
+.upload-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.upload-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(15, 143, 133, 0.05);
+}
+
+.helper-text {
+  margin: 0;
+  color: var(--teal);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.onboarding-panel {
+  margin-top: 1rem;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .two-column,
+  .feed-grid,
+  .lawyer-grid,
+  .three-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .layout {
+    padding-bottom: 8rem;
+  }
+
+  .hero {
+    padding: 1.1rem;
+    border-radius: 1.5rem;
+  }
+
+  .panel,
+  .feed-card,
+  .lawyer-card {
+    border-radius: 1.35rem;
+  }
+}
