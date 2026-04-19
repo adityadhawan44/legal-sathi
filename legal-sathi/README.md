@@ -115,6 +115,26 @@ Start Command: npm start
 
 4. Render will expose the app on its assigned domain and use `/api/health` as the health check.
 
+## Free public demo deploy
+
+For the fastest free public launch, deploy in demo mode with no paid integrations configured.
+
+- No `OPENAI_API_KEY` required
+- No `MONGODB_URI` required
+- No `CLOUDINARY_URL` required
+- No Twilio credentials required
+- No Razorpay credentials required
+
+What the public demo will do:
+
+- use built-in legal fallback guidance instead of live AI
+- use mock OTP verification for the profile flow
+- use mock consultation orders instead of real payments
+- use local temporary upload handling instead of cloud storage
+- store complaint drafts in temporary in-memory demo storage
+
+This is the cheapest way to publish the product for portfolio, testing, and early user feedback.
+
 ## Product caution
 
 This MVP gives informational guidance only. It does not replace a licensed advocate or police/legal authority. The fallback legal mappings in the API are intentionally narrow for safety.

@@ -459,6 +459,14 @@ export default function App() {
       </header>
 
       <main className="layout">
+        <section className="demo-banner">
+          <strong>Public demo mode</strong>
+          <span>
+            Running without paid integrations. AI, OTP, payments, uploads, and saved data use safe demo fallbacks unless
+            live credentials are added later.
+          </span>
+        </section>
+
         <section className="hero">
           <div className="hero-copy">
             <p className="eyebrow">Complaint system + marketplace + awareness feed</p>

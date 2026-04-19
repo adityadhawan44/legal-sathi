@@ -185,11 +185,32 @@ textarea {
 .hero,
 .panel,
 .feed-card,
-.lawyer-card {
+.lawyer-card,
+.demo-banner {
   background: var(--card);
   border: 1px solid rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
+}
+
+.demo-banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 1.3rem;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.16), rgba(26, 77, 179, 0.1));
+}
+
+.demo-banner strong {
+  color: var(--blue-deep);
+}
+
+.demo-banner span {
+  color: var(--muted);
+  max-width: 50rem;
 }
 
 .hero {
@@ -496,6 +517,11 @@ ul {
 
 @media (max-width: 640px) {
   .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .demo-banner {
     align-items: start;
     flex-direction: column;
   }
